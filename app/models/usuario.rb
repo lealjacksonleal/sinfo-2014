@@ -7,4 +7,9 @@ class Usuario < ActiveRecord::Base
                   :palestras, 
                   :senha, 
                   :telefone
+
+
+     before_save do |user|
+     	user.email.downcase!
+     end
 end
